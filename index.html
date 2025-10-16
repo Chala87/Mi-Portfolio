@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title> 
+    
+    <style> 
+    
+
+    /* =========== Estilos generales ========== */
+
+
+/*main, aside, div, section, ul, li, h2, h3, h4, img {border: 1px solid;} */
+
+body {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    background-color: #f4f4f9;
+}
+
+    main { 
+        margin: 20px auto; /*Añado margen superior e inferior.*/
+        display: flex;
+    width: 800px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    aside { 
+        background-color: #2c3e50;
+        color: white;
+        width: 35%;
+        padding: 25px; /*Le añado padding para que el contenido no toque los bordes.*/ 
+    }
+
+    section {
+        width: 65%;
+        padding: 25px;
+        background-color: ffffff;
+    }
+
+aside, section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h4, .experiencia-fecha {
+    color: #3498db;
+    font-size: 14px;
+}
+
+ul {
+    padding-left: 18px;
+}
+
+h3 {
+    padding-left: 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+li {
+    padding-left: 10px;
+    margin-bottom: 8px; /*Quiero ponerle mayor espaciado entre items.*/
+}
+/* ========= Aside ============= */
+
+
+
+
+/* Voy a hacer un contenedor para cada bloque*/
+.aside-block {
+    width: 100%;
+    margin-bottom: 30px; 
+}
+
+/* Foto de perfil */
+#foto-perfil {
+    width: 150px;
+    border-radius: 50%;
+    border: 4px solid #3498db;
+    margin-bottom: 20px;
+    display: block; /* Que sea un bloque */
+    margin-left: auto; /* Centra la imagen */
+    margin-right: auto; /* Centra la imagen */
+}
+
+/* Esto sera para los estilos de los títulos H3 dentro de los bloques */
+.aside-block h3 {
+    color: #ffffff;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.aside-block ul {
+    list-style: none; 
+    padding: 0;       
+    margin: 0;        
+}
+
+
+.aside-block ul li {
+    padding-left: 1.5em;  
+    position: relative;  
+    margin-bottom: 8px;   
+}
+
+
+.aside-block ul li::before {
+    content: '•';
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.3em;
+    
+    position: absolute; 
+    left: 0;            
+    top: -0.1em;        
+}
+
+/* Estilos para el enlace de LinkedIn */
+.aside-block a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.aside-block a:hover {
+    text-decoration: underline;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-left: 0;
+}
+
+.contact-listli::before {
+    content: none;
+}
+
+.contact-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+}
+
+.section-educacion {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.section-educacion h3 {
+    color: #2c3e50; /* Color oscuro como el título de la experiencia */
+    margin-bottom: 15px;
+}
+
+.section-educacion h4 {
+    margin-bottom: 5px;
+}
+
+.section-educacion h5 {
+    font-size: 13px;
+    color: #555555;
+    font-weight: normal;
+    font-style: italic;
+    margin: 0;
+}
+
+.educacion-item {
+    margin-bottom: 15px;
+}
+
+.section-educacion ul {
+    list-style-position: inside;
+    padding-left: 5px;
+}
+
+.section-educacion li {
+    padding-left: 0;
+}
+
+
+/* ============= Section =========== */
+/* ... (El resto de tus estilos) ... */
+
+
+/* ============= Section =========== */
+
+#portada {
+   width: 100%;
+   text-align: center;
+   padding-bottom: 20px;
+   border-bottom: 1px solid #eeeeee;
+   margin-bottom: 20px; 
+}
+
+#portada h1 {
+    color: #2c3e50;
+}
+
+#portada h4 {
+    color: #555555;
+    font-weight: normal;
+}
+
+.experiencia-titulo {
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.experiencia-fecha {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.experiencia > h4 {
+    color: #555555;      
+    font-size: 13px;     
+    font-weight: normal; 
+    font-style: italic;  
+    margin: -5px 0 10px 0;
+}
+
+/* ====== Estilos para la Seccion de Proyectos =========== */
+
+.section-proyectos {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.section-proyectos h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+}
+
+.proyecto-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px); /* Efecto de levantar la tarjeta al pasar el mouse */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.proyecto-card img {
+    width: 100%;
+    height: 120px; /* Altura fija para la imagen */
+    object-fit: cover; 
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.card-content p {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.tecnologias {
+    display: flex;      
+    flex-wrap: wrap;   
+    margin-top: 15px;   
+}
+
+/* Estilo para cada etiqueta individual */
+.tecnologias span {
+    background-color: #eaf2f8;
+    color: #2c3e50;
+    padding: 4px 10px; /* Un poco más de padding horizontal */
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 6px;  
+    margin-bottom: 6px; 
+}
+
+.proyecto-card.placeholder {
+    background-color: #f9f9f9;
+    border-style: dashed;
+}
+
+/* === Estilos para el Formulario de Contacto =========== */
+
+.section-contacto {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555555;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.btn-enviar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #34495e;
+}
+
+
+    </style>
+</head>
+<body>
+    <main>
+        
+        <aside>
+    <div id="fotoCV">
+        <img id="foto-perfil" src="yo (1).mp4.png" alt="mi foto">
+    </div>
+
+    <div class="aside-block">
+    <h3>CONTACTO</h3>
+    <ul class="contact-list"> <li>
+            <img src="https://img.icons8.com/material-rounded/24/FFFFFF/new-post.png" alt="email-icon" class="contact-icon">
+            xxxxxx@gmail.com
+        </li>
+        <li>
+            <img src="https://img.icons8.com/material-rounded/24/FFFFFF/phone--v1.png" alt="phone-icon" class="contact-icon">
+            (+54) - 935128xxxxx
+        </li>
+        <li>
+            <img src="https://img.icons8.com/material-rounded/24/FFFFFF/marker.png" alt="location-icon" class="contact-icon">
+            Córdoba, Argentina
+        </li>
+       <li>
+            <img src="https://img.icons8.com/material-rounded/24/FFFFFF/linkedin.png" alt="linkedin-icon" class="contact-icon">
+            <a href="https://www.linkedin.com/in/adrian-chalabe1184/">LinkedIn</a>
+        </li>
+
+        <li>
+            <img src="https://img.icons8.com/material-rounded/24/FFFFFF/github.png" alt="github-icon" class="contact-icon">
+            <a href="https://github.com/Chala87" target="_blank">GitHub</a>
+        </li>
+    </ul>
+</div>
+    
+    <div class="aside-block">
+    <h3>SKILLS</h3>
+    <ul>
+        <li>Python</li>
+        <li>Javascript</li>
+        <li>SQL Avanzado</li>
+        <li>Git</li>
+        <li>Selenium & Cypress (Automation)
+        <li>API Testing (Postman)
+        <li>Test Case Design (Manual)
+        <li>Tableau & Power BI</li>
+        <li>Cloud Básico (AWS/GCP)</li>
+        <li>Metodologías Ágiles (Jira)</li>
+    </ul>
+</div>
+    
+<div class="aside-block">
+    <h3>CERTIFICACIONES</h3>
+    <ul>
+        <li>
+            <a href="https://drive.google.com/drive/folders/1xdOhIxH3Jz3IeskGHYdRQ-pbIQV95fWW?usp=sharing" target="_blank">Ver Certificaciones</a>
+        </li>
+    </ul>
+</div>
+
+    <div class="aside-block">
+        <h3>IDIOMAS</h3>
+        <ul>
+            <li>Español</li>
+            <li>Inglés</li>
+            <li>Italiano</li>
+        </ul>
+    </div>
+
+    <div class="aside-block">
+    <H3>SOFT SKILLS</H3>
+    <ul>
+        <li>Comunicación</li>
+        <li>Resolución de Problemas</li>
+        <li>Storytelling con Datos</li>
+        <li>Gestión de Stakeholders</li>
+        <li>Visión de Negocio</li>
+        <li>Mentoría y Coaching</li>
+        <li>Persuasión</li>
+        <li>Adaptabilidad</li>
+    </ul>
+</div>
+
+</aside>
+        
+        <section>
+            <div id="portada">
+               <h1>Adrián Chalabe</h1><hr>
+               <hr>
+               <h4>Tutor/Mentor - Developer - QA Tester - Seller</h4>
+            </div>
+
+            <div class="section-resumen">
+              <p>Estudiante de Ingeniería Biomédica y Desarrollador de Software en formación. Experiencia en tutoría y mentoría especializada en matemáticas y física, reforzando habilidades analíticas y de resolución de problemas.</p>
+              <p>He liderado equipos de ventas digitales, enfocado en análisis de KPIs y estrategias comerciales. Como QA tester, he realizado pruebas técnicas y asegurado el control de calidad en proyectos de software.</p>
+              <p>Perfil técnico-comercial con capacidad para integrar conocimientos STEM en entornos multidisciplinarios.</p>
+            
+               </div>
+
+<div class="section-proyectos">
+    <h3>Proyectos Destacados</h3>
+    <div class="proyectos-grid">
+
+        <div class="proyecto-card">
+            <img src="Dashboardventas.jpg" alt="Imagen de un dashboard de ventas">
+            <div class="card-content">
+                <h4>Dashboard de Análisis de Ventas</h4>
+                <p>Creación de un dashboard para visualizar KPIs críticos (tasa de conversión, CAC, LTV), permitiendo al equipo de ventas tomar decisiones estratégicas basadas en datos en tiempo real.</p>
+                <div class="tecnologias">
+                    <span>Excel</span>
+                    <span>CRM</span>
+                    <span>Análisis de Datos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="proyecto-card">
+            <img src="matematica1.jpg" alt="Imagen de gráficos y análisis académico">
+            <div class="card-content">
+                <h4>Optimización del Rendimiento Académico</h4>
+                <p>Análisis de datos y diseño de planes de estudio personalizados para más de 1,000 estudiantes, resultando en un aumento promedio de 2 calificaciones en sus clases.</p>
+                <div class="tecnologias">
+                    <span>Análisis de Datos</span>
+                    <span>Mentoría</span>
+                    <span>Ed-Tech</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="proyecto-card">
+            <img src="testing1.jpg" alt="Imagen de testing de una app móvil">
+            <div class="card-content">
+                <h4>Auditoría y Testing de App Móvil</h4>
+                <p>Ejecuté pruebas que identificaron 15 defectos críticos, lo que resultó en un aumento del 25% en la calificación de la app en la Google Store y una reducción del 20% en quejas de usuarios.</p>
+                <div class="tecnologias">
+                    <span>QA</span>
+                    <span>Testing Manual</span>
+                    <span>Bug Tracking</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="section-educacion">
+    <h3>Educación y Formación</h3>
+    
+    <div class="educacion-item">
+        <div class="experiencia-titulo">
+            <h4>Desarrollo de Software</h4>
+            <p class="experiencia-fecha">2024 - Actualidad</p>
+        </div>
+        <h5>IFTS N° 29</h5>
+    </div>
+    
+    <div class="educacion-item">
+        <div class="experiencia-titulo">
+            <h4>Ingeniería</h4>
+            <p class="experiencia-fecha">2014 - Presente</p>
+        </div>
+        <h5>Universidad Nacional de Córdoba</h5>
+    </div>
+    
+    <div class="educacion-item">
+        <h4>Certificaciones Destacadas</h4>
+        <ul>
+            <li><strong>Google Data Analytics</strong> Professional Certificate</li>
+            <li><strong>Google Cybersecurity</strong> Professional Certificate</li>
+            <li><strong>IBM Data Analyst</strong> Professional Certificate</li>
+            <li><strong>Testing Avanzado</strong> - UTN Argentina 4.0</li>
+        </ul>
+    </div>
+</div>
+         <div class="section-experiencia">
+
+    <div class="experiencia">
+        <h3>Liderazgo de Equipos y Ventas</h3>
+        <div class="experiencia-titulo">
+            <h4>Líder de Equipo de Ventas</h4>
+            <p class="experiencia-fecha">Actualidad</p>
+        </div>
+        <h4>Berminal</h4>
+        <ul>
+            <li>Actualmente guío a un equipo de 14 personas en la venta de productos digitales, enfocándome en su desarrollo y en crear un ambiente de colaboración.</li>
+            <li>Mi rol implica definir la estrategia comercial y analizar las métricas para tomar decisiones que impulsen al equipo.</li>
+            <li>Comencé en roles de atención al cliente y ventas, lo que me dio una base sólida para entender el negocio y liderar al equipo actual.</li>
+        </ul>
+    </div>
+
+    <div class="experiencia">
+        <h3>Análisis de Datos y Business Intelligence</h3>
+        <div class="experiencia-titulo">
+            <h4>Analista de Datos</h4>
+            <p class="experiencia-fecha">04/2019 - 10/2022</p>
+        </div>
+        <h4>Boost-CTR</h4>
+        <ul>
+            <li>Mi principal logro fue transformar datos en decisiones que <strong>aumentaron los ingresos por ventas en un 25%</strong> y redujeron costos.</li>
+            <li>Me encargaba de asegurar la calidad y fiabilidad de los datos, realizando procesos de limpieza y validación para que el equipo confiara en la información.</li>
+            <li>Utilicé herramientas como Tableau y Power BI para crear paneles visuales que ayudaban a todo el equipo a entender tendencias complejas de forma sencilla.</li>
+        </ul>
+    </div>
+
+    <div class="experiencia">
+        <h3>Quality Assurance & Testing</h3>
+        <div class="experiencia-titulo">
+            <h4>QA Tester</h4>
+            <p class="experiencia-fecha">04/2015 - 10/2019</p>
+        </div>
+        <h4>HeySphere</h4>
+        <ul>
+            <li>Fui una pieza clave en el ciclo de desarrollo, colaborando de cerca con los programadores para asegurar que las nuevas funciones se lanzaran sin errores.</li>
+            <li>Mi trabajo consistía en realizar pruebas exhaustivas para garantizar una experiencia de usuario fluida y de alta calidad en el producto final.</li>
+        </ul>
+        <div class="experiencia-titulo" style="margin-top: 15px;">
+            <h4>Game Tester</h4>
+            <p class="experiencia-fecha">07/2012 - 11/2014</p>
+        </div>
+        <h4>Globant</h4>
+        <ul>
+            <li>Como tester de videojuegos, identifiqué errores críticos antes de que llegaran a los jugadores, lo que ayudó a <strong>reducir la recurrencia de defectos en un 40%</strong>.</li>
+        </ul>
+    </div>
+
+    <div class="experiencia">
+        <h3>Tutoría y Tecnología Educativa</h3>
+        <div class="experiencia-titulo">
+            <h4>Tutor, Mentor y Desarrollador de Contenido</h4>
+            <p class="experiencia-fecha">02/2015 - 09/2024</p>
+        </div>
+        <h4>YUP, Chegg, Ed-Tech (Consultoría)</h4>
+        <ul>
+            <li>Mi mayor satisfacción ha sido ayudar a <strong>más de 10,000 estudiantes</strong> a alcanzar sus metas, logrando que mejoraran notablemente sus calificaciones.</li>
+            <li>No solo impartí tutorías personalizadas, sino que también diseñé material de estudio y un currículo de matemáticas que hizo el aprendizaje más efectivo y ameno.</li>
+            <li>Mi enfoque siempre ha sido adaptar los planes de estudio a las necesidades de cada alumno, cubriendo temas desde álgebra hasta cálculo.</li>
+        </ul>
+    </div>
+
+</div>
+
+</div>
+
+<div class="section-contacto">
+    <h3>Contacto</h3>
+    <form class="contact-form" action="https://formspree.io/f/manpvepb" method="POST">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+    </form>
+</div>
+        </section>
+    </main>
+
+</main>
+
+    <script>
+</body>
+</html>
